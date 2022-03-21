@@ -1,5 +1,6 @@
 package com.diegocampos.evaluacionmodulo3dc.View.Fragmentos;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -11,13 +12,12 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.diegocampos.evaluacionmodulo3dc.Interactor.ConexionBD;
 import com.diegocampos.evaluacionmodulo3dc.Interactor.manejoListview.AdaptadorDatos;
 import com.diegocampos.evaluacionmodulo3dc.Interactor.manejoListview.RegistroEquipoDatos;
 import com.diegocampos.evaluacionmodulo3dc.R;
+import com.diegocampos.evaluacionmodulo3dc.View.actividades.ConsultaRegistroEquipo;
 
 import java.util.ArrayList;
 
@@ -28,6 +28,8 @@ public class FragVerEquipos extends Fragment {
     AdaptadorDatos adaptador;
     ArrayList<RegistroEquipoDatos> listaRegistros = new ArrayList<>();
 
+    String codigo= "";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,7 +37,7 @@ public class FragVerEquipos extends Fragment {
         View v = inflater.inflate(R.layout.fragment_frag_ver_equipos, container, false);
         listViewRegistros = v.findViewById(R.id.myListview);
 
-        String codigo = "";
+        codigo = "";
         String nombre = "";
         String fecha = "";
 
@@ -56,26 +58,20 @@ public class FragVerEquipos extends Fragment {
 
             } while(fila.moveToNext());
 
-
-
-
             adaptador = new AdaptadorDatos(getContext(), listaRegistros);
             listViewRegistros.setAdapter(adaptador);
             listViewRegistros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-
-                    // Obtener el administrador de fragmentos a través de la actividad
-                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                    // Definir una transacción
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    // Remplazar el contenido principal por el fragmento
-                    fragmentTransaction.replace(R.id.myFrame, new FragConsultaRegistro()).commit();
-
-
                     RegistroEquipoDatos rgd = listaRegistros.get(i);
-                    Toast.makeText(getContext(), rgd.getNombre(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), rgd.getCodigo(), Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(getContext(), ConsultaRegistroEquipo.class);
+                    intent.putExtra("cod", codigo);
+                    startActivity(intent);
+
+
                 }
             });
 
@@ -84,10 +80,13 @@ public class FragVerEquipos extends Fragment {
             Toast.makeText(getContext(), "Aun no hay Registros  ", Toast.LENGTH_SHORT).show();
         }
 
+
+
         fila.close();
         bd.close();
 
 
         return v;
     }
+
 }
