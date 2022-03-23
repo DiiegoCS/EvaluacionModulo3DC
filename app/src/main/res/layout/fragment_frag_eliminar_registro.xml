@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Fragmentos.FragEliminarRegistroViewImpl">
+    tools:context=".View.Fragmentos.FragEliminarRegistroViewImpl"
+    android:background="@drawable/fondorosa">
 
 
     <EditText
@@ -12,9 +13,11 @@
         android:layout_width="225dp"
         android:layout_height="59dp"
         android:ems="10"
-        android:hint="Ingrese Código de Ingreso"
+        android:hint=" Código de Ingreso"
+        android:textSize="20sp"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.65"
@@ -41,6 +44,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Buscar"
+        android:textSize="20sp"
+        android:backgroundTint="@color/teal_700"
+        android:fontFamily="sans-serif-condensed-medium"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.307"
@@ -60,40 +66,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Código de Ingreso"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.199"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        app:layout_constraintVertical_bias="0.384" />
 
     <TextView
         android:id="@+id/txtNomCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:text="Nombre Cliente"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCodIngr"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtCodIngr" />
 
     <TextView
         android:id="@+id/txtMarcaEquipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:text="Marca Equipo"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomCliente"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtNomCliente" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -106,14 +112,14 @@
         android:id="@+id/txtModeloEquipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:text="Modelo Equipo"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMarcaEquipo"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtMarcaEquipo" />
 
     <Button
         android:id="@+id/btnEliminar"
@@ -127,7 +133,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.615" />
+        app:layout_constraintVertical_bias="0.636" />
 
     <TextView
         android:id="@+id/txtFechaIng"
@@ -138,7 +144,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnEliminar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtModeloEquipo" />
+        app:layout_constraintTop_toBottomOf="@+id/txtModeloEquipo"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESULTADO DE LA BÚSQUEDA:"
+        android:textColor="#630023"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtCodIngr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.671" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

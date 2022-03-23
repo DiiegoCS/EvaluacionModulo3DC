@@ -5,12 +5,12 @@
     android:orientation="vertical"
     android:gravity="bottom"
     android:padding="@dimen/padding_general"
-    android:background="@android:color/darker_gray">
+    android:background="@drawable/fondo3colores">
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_profile"
+        android:src="@drawable/im_user"
         android:layout_gravity="center" />
 
     <TextView
@@ -19,6 +19,8 @@
         android:layout_height="wrap_content"
         android:text="Encabezado"
         android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#680021"
         android:layout_gravity="center" />
 
 </LinearLayout>
