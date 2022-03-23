@@ -1,12 +1,13 @@
 package com.diegocampos.evaluacionmodulo3dc.View.actividades;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.diegocampos.evaluacionmodulo3dc.Interfaces.RegistroUser.RegistroPresenter;
 import com.diegocampos.evaluacionmodulo3dc.Interfaces.RegistroUser.RegistroView;
@@ -16,7 +17,9 @@ import com.diegocampos.evaluacionmodulo3dc.R;
 public class Registro extends AppCompatActivity implements RegistroView {
 
     EditText txtNombre, txtUser2, txtPass2;
-    Button btnRegistrar;
+    Button btnRegistrar ;
+    ImageButton btnBack;
+
 
     RegistroPresenter presentador;
 
@@ -29,8 +32,18 @@ public class Registro extends AppCompatActivity implements RegistroView {
         txtUser2 = findViewById(R.id.txtUser2);
         txtPass2 = findViewById(R.id.txtPass2);
         btnRegistrar = findViewById(R.id.btnRegistrar);
+        btnBack = findViewById(R.id.btnBack1);
 
         presentador = new RegistroPresenterImpl(this);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+
     }
 
     public void registro(View view){
@@ -42,6 +55,7 @@ public class Registro extends AppCompatActivity implements RegistroView {
     @Override
     public void exito() {
         Toast.makeText(this, "Registrado correctamente", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

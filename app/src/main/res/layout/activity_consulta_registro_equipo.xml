@@ -20,6 +20,24 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnBack2"
+                    android:layout_width="52dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline9"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                    app:layout_constraintHorizontal_bias="0.358"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.39"
+                    app:srcCompat="@drawable/ic_back" />
+
             <TextView
                 android:id="@+id/txtTitulo2"
                 android:layout_width="match_parent"
@@ -30,6 +48,7 @@
                 android:textColor="@color/teal_700"
                 android:textAlignment="center"
                 android:layout_marginTop="5dp"/>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/txtFecha3"

@@ -34,6 +34,13 @@ public class ConsultaRegistroEquipo extends AppCompatActivity {
 
        codigoIngreso2 = getIntent().getStringExtra("cod");
 
+       vb3.btnBack2.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               finish();
+           }
+       });
+
         mostrarConsulta();
     }
 

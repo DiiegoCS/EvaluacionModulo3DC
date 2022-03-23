@@ -4,7 +4,8 @@
     android:id="@+id/frag_verRegistros"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Fragmentos.FragVerEquipos">
+    tools:context=".View.Fragmentos.FragVerEquipos"
+    android:background="@drawable/fondomorado">
 
 
     <ListView
