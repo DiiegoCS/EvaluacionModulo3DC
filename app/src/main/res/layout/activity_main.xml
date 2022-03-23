@@ -12,16 +12,15 @@
         android:layout_width="228dp"
         android:layout_height="53dp"
         android:ems="10"
-        android:hint="Ingrese User"
-        android:textStyle="bold"
+        android:hint="Ingrese Usuario"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.46" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtPass"
@@ -29,7 +28,7 @@
         android:layout_height="59dp"
         android:layout_marginTop="25dp"
         android:ems="10"
-        android:hint="Ingrese Pass"
+        android:hint="Ingrese Contraseña"
         android:textStyle="bold"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -41,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="solicitarValidacion"
-        android:text="Login"
+        android:text="Iniciar Sesión"
         android:textStyle="bold"
         android:textSize="20sp"
         android:fontFamily="sans-serif-condensed-medium"
@@ -72,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
         android:onClick="abrirRegistro"
-        android:text="Registro"
+        android:text="Registrarse"
         android:textStyle="bold"
         android:textSize="20sp"
         android:backgroundTint="@color/teal_700"
@@ -82,16 +81,19 @@
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="50dp" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="396dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="122dp"
+        android:layout_height="121dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

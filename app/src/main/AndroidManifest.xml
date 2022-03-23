@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EvaluacionModulo3DC">
         <activity
-            android:name=".View.actividades.ConsultaRegistroEquipo"
+            android:name=".View.actividades.ConsultaRegistroEquipoViewImpl"
             android:exported="false" />
         <activity
             android:name=".View.actividades.OtraActividad"

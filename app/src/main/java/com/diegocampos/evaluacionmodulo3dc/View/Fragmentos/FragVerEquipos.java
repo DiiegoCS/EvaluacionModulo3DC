@@ -17,7 +17,7 @@ import com.diegocampos.evaluacionmodulo3dc.Interfaces.VerEquipos.FragVerEquiposP
 import com.diegocampos.evaluacionmodulo3dc.Interfaces.VerEquipos.FragVerEquiposViewInterface;
 import com.diegocampos.evaluacionmodulo3dc.Presenter.FragVerEquiposPresenterImpl;
 import com.diegocampos.evaluacionmodulo3dc.R;
-import com.diegocampos.evaluacionmodulo3dc.View.actividades.ConsultaRegistroEquipo;
+import com.diegocampos.evaluacionmodulo3dc.View.actividades.ConsultaRegistroEquipoViewImpl;
 
 import java.util.ArrayList;
 
@@ -54,7 +54,7 @@ public class FragVerEquipos extends Fragment implements FragVerEquiposViewInterf
                 RegistroEquipoDatos rgd = listaRegistros.get(i);
                 Toast.makeText(getContext(), rgd.getCodigo(), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getContext(), ConsultaRegistroEquipo.class);
+                Intent intent = new Intent(getContext(), ConsultaRegistroEquipoViewImpl.class);
                 intent.putExtra("cod", rgd.getCodigo());
                 startActivity(intent);
 

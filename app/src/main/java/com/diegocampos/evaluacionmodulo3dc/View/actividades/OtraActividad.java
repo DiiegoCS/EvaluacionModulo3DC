@@ -34,6 +34,7 @@ import com.diegocampos.evaluacionmodulo3dc.R;
 import com.diegocampos.evaluacionmodulo3dc.View.Fragmentos.FragEliminarRegistroViewImpl;
 import com.diegocampos.evaluacionmodulo3dc.View.Fragmentos.FragRegistroEquipo;
 import com.diegocampos.evaluacionmodulo3dc.View.Fragmentos.FragVerEquipos;
+import com.diegocampos.evaluacionmodulo3dc.View.Fragmentos.FragmentBienvenida;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.File;
@@ -49,7 +50,6 @@ import java.util.List;
 
 public class OtraActividad extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final int REQUEST_PERMISSION_CAMERA = 100; //detectar la respuesta del usuario si es OK
     private static final int TAKE_PICTURE = 101; //detecta si se tomo la foto con la camara del celular
     private static final int REQUEST_PERMISSION_WRITE_STORAGE = 200; //detectar la respuesta del usuario si es ok
 
@@ -88,7 +88,7 @@ public class OtraActividad extends AppCompatActivity implements NavigationView.O
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.myFrame, new FragRegistroEquipo())
+                .add(R.id.myFrame, new FragmentBienvenida())
                 .commit();
         setTitle("Registrar equipo");
 
