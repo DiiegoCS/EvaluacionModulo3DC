@@ -23,7 +23,7 @@ public class ConsultaRegistroEquipo extends AppCompatActivity {
 
     private ActivityConsultaRegistroEquipoBinding vb3;
 
-    String codigo="";
+    String codigoIngreso2 ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class ConsultaRegistroEquipo extends AppCompatActivity {
         View view = vb3.getRoot();
         setContentView(view);
 
-        codigo = getIntent().getStringExtra("cod");
+       codigoIngreso2 = getIntent().getStringExtra("cod");
 
         mostrarConsulta();
     }
@@ -41,7 +41,7 @@ public class ConsultaRegistroEquipo extends AppCompatActivity {
         ConexionBD conexion = new ConexionBD(getBaseContext(), "administracion", null, 1);
         SQLiteDatabase bd = conexion.getWritableDatabase();
 
-        String codigoIngreso = codigo;
+        String codigoIngreso = codigoIngreso2;
 
         Cursor fila = bd.rawQuery("SELECT * FROM registroEquipos WHERE codigoIngreso='"+codigoIngreso+"'",null);
 
@@ -126,7 +126,7 @@ public class ConsultaRegistroEquipo extends AppCompatActivity {
 
             if(fotos != null) {
                 for (int i = 0; i < fotos.length; i++) {
-                    if (fotos[i].getAbsolutePath().contains(codigo)) {
+                    if (fotos[i].getAbsolutePath().contains(codigoIngreso2)) {
                         archivos.add(BitmapFactory.decodeFile(fotos[i].getAbsolutePath()));
 
                     }
@@ -134,7 +134,6 @@ public class ConsultaRegistroEquipo extends AppCompatActivity {
             }
             vb3.img01.setImageBitmap(archivos.get(0));
             vb3.img02.setImageBitmap(archivos.get(1));
-
 
             bd.close();
         }

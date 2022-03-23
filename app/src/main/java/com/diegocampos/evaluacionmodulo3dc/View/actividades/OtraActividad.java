@@ -31,7 +31,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.diegocampos.evaluacionmodulo3dc.Interactor.manejoCamara.Permisos;
 import com.diegocampos.evaluacionmodulo3dc.R;
-import com.diegocampos.evaluacionmodulo3dc.View.Fragmentos.FragEliminarRegistro;
+import com.diegocampos.evaluacionmodulo3dc.View.Fragmentos.FragEliminarRegistroViewImpl;
 import com.diegocampos.evaluacionmodulo3dc.View.Fragmentos.FragRegistroEquipo;
 import com.diegocampos.evaluacionmodulo3dc.View.Fragmentos.FragVerEquipos;
 import com.google.android.material.navigation.NavigationView;
@@ -346,7 +346,7 @@ public class OtraActividad extends AppCompatActivity implements NavigationView.O
                     ft.replace(R.id.myFrame, new FragVerEquipos()).commit();
                     break;
                 case R.id.nav_eliminar:
-                    ft.replace(R.id.myFrame, new FragEliminarRegistro()).commit();
+                    ft.replace(R.id.myFrame, new FragEliminarRegistroViewImpl()).commit();
                     break;
             }
             setTitle(item.getTitle()); //para mostrar el título

@@ -24,7 +24,7 @@ public class FragRegistroEquipo extends Fragment implements RegistroEquipoView {
 
     private FragmentFragRegistroEquipoBinding vb2;
 
-    String f, foto1, foto2;
+    String f;
 
     RegistroEquipoPresenter presenter;
     OtraActividad otraActividad;
@@ -49,9 +49,6 @@ public class FragRegistroEquipo extends Fragment implements RegistroEquipoView {
                 solicitarGuardarFotos();
                 vb2.btnGuardarRegistro.setEnabled(true);
             }
-
-
-
         });
 
         vb2.btnGuardarRegistro.setOnClickListener(new View.OnClickListener() {
@@ -108,44 +105,33 @@ public class FragRegistroEquipo extends Fragment implements RegistroEquipoView {
         String modelo = vb2.txtModelo.getText().toString();
         String observaciones = vb2.txtObservaciones.getText().toString();
 
-        String caja="";
+        String caja="NO";
         if(vb2.btnCajaSi.isChecked()){  caja = "SI"; }
-        else if(vb2.btnCajaNo.isChecked()){ caja = "NO";}
 
-        String cargador="";
+        String cargador="NO";
         if(vb2.btnCargadorSi.isChecked()){  cargador = "SI"; }
-        else if(vb2.btnCargadorNo.isChecked()){ cargador = "NO";}
 
-        String manual="";
+        String manual="NO";
         if(vb2.btnManualSi.isChecked()){  manual = "SI"; }
-        else if(vb2.btnManualNo.isChecked()){ manual = "NO";}
 
-        String garantia="";
+        String garantia="NO";
         if(vb2.btnGarantiaSi.isChecked()){  garantia = "SI"; }
-        else if(vb2.btnGarantiaNo.isChecked()){ garantia = "NO";}
 
-        String cargaSo="";
+        String cargaSo="NO";
         if(vb2.btnCargaSOSi.isChecked()){  cargaSo = "SI"; }
-        else if(vb2.btnCargaSONo.isChecked()){ cargaSo = "NO";}
 
-        String monitor="";
+        String monitor="NO";
         if(vb2.btnMonitorSi.isChecked()){  monitor = "SI"; }
-        else if(vb2.btnMonitorNo.isChecked()){ monitor = "NO";}
 
-        String audio="";
+        String audio="NO";
         if(vb2.btnAudioSi.isChecked()){  audio = "SI"; }
-        else if(vb2.btnAudioNo.isChecked()){ audio = "NO";}
 
-        String touchpad="";
+        String touchpad="NO";
         if(vb2.btnTouchSi.isChecked()){  touchpad = "SI"; }
-        else if(vb2.btnTouchNo.isChecked()){ touchpad = "NO";}
-
 
         presenter.guardarRegistro(codigo, nombre, marca, modelo, f, caja, cargador, manual,
                 garantia, cargaSo, monitor, audio, touchpad, observaciones,getContext());
-
     }
-
 
     @Override
     public void solicitarGuardarFotos() {
