@@ -78,7 +78,14 @@ public class FragRegistroEquipo extends Fragment implements RegistroEquipoView {
 
     @Override
     public void exitoRegistro() {
-        Toast.makeText(getContext(), "Registrado", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "Registrado Correctamente", Toast.LENGTH_SHORT).show();
+
+        vb2.txtCodigoIngreso.setText("");
+        vb2.txtNombre.setText("");
+        vb2.txtMarca.setText("");
+        vb2.txtModelo.setText("");
+        vb2.txtObservaciones.setText("");
+
     }
 
     @Override
