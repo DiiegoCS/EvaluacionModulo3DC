@@ -55,6 +55,9 @@ public class Registro extends AppCompatActivity implements RegistroView {
     @Override
     public void exito() {
         Toast.makeText(this, "Registrado correctamente", Toast.LENGTH_SHORT).show();
+        txtNombre.setText("");
+        txtUser2.setText("");
+        txtPass2.setText("");
 
     }
 

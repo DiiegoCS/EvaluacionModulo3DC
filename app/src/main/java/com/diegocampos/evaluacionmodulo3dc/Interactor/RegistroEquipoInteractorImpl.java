@@ -17,7 +17,7 @@ public class RegistroEquipoInteractorImpl implements RegistroEquipoInteractor {
         if(codigoIngreso.equals("")){
             presenter.setErrorCodigo();
         }
-        else if(marca.equals("")){
+        else if(nombre.equals("")){
             presenter.setErrorNombre();
         }
         else {
