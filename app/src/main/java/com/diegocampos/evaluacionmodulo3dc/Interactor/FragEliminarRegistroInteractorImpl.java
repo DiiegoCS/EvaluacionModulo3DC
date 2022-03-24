@@ -3,10 +3,13 @@ package com.diegocampos.evaluacionmodulo3dc.Interactor;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
+import android.os.Environment;
 
 import com.diegocampos.evaluacionmodulo3dc.Interfaces.EliminarRegistro.FragEliminarRegistroInteractorInterface;
 import com.diegocampos.evaluacionmodulo3dc.Interfaces.EliminarRegistro.FragEliminarRegistroPresenterInterface;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class FragEliminarRegistroInteractorImpl implements FragEliminarRegistroInteractorInterface {
@@ -52,6 +55,15 @@ public class FragEliminarRegistroInteractorImpl implements FragEliminarRegistroI
         SQLiteDatabase bd = conexion.getWritableDatabase();
 
         int a=bd.delete("registroEquipos", "codigoIngreso='"+codigo+"'", null);
+
+        File ruta = null;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+            ruta = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES+"/MyApp/");
+        }
+        else{
+            ruta = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        }
 
         if (a>0){
             presentador.exitoEliminar();
